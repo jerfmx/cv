@@ -1,0 +1,8 @@
+FROM nginx
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt-get -y install nano
+WORKDIR /usr/share/nginx/html/
+ADD https://github.com/BlackrockDigital/startbootstrap-resume/archive/v5.0.4.tar.gz .
+RUN tar -xvf v5.0.4.tar.gz --strip-components 1
+EXPOSE 80
